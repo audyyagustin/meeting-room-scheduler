@@ -33,6 +33,7 @@ Setiap diagram memiliki fungsi yang berbeda dalam menjelaskan rancangan sistem b
 ## Deskripsi Setiap Diagram
 
 ### 1. ERD (Entity Relationship Diagram)
+![ERD](ERD.png)
 
 ERD digunakan untuk menggambarkan struktur basis data yang digunakan dalam sistem booking ruang meeting. Diagram ini menunjukkan entitas utama, atribut pada masing-masing entitas, serta hubungan antar entitas.
 
@@ -41,6 +42,7 @@ Pada sistem ini, ERD menjelaskan bagaimana data pengguna, data ruang meeting, da
 ERD juga membantu memastikan bahwa setiap data yang disimpan memiliki hubungan yang logis. Contohnya, satu pengguna dapat memiliki banyak data booking, dan satu ruang meeting juga dapat digunakan dalam banyak transaksi booking. Hubungan tersebut penting agar sistem dapat berjalan dengan baik dan tidak menimbulkan redundansi data yang berlebihan.
 
 ### 2. BPMN (Business Process Model and Notation)
+![BPMN](BPMN.png)
 
 BPMN digunakan untuk menjelaskan alur proses bisnis sistem secara keseluruhan. Diagram ini memperlihatkan tahapan kegiatan yang dilakukan oleh pengguna maupun admin dalam proses booking ruang meeting.
 
@@ -49,6 +51,7 @@ Melalui BPMN, dapat dipahami bagaimana alur sistem dimulai dari pengguna melihat
 BPMN sangat penting karena menggambarkan logika operasional sistem sebelum masuk ke tahap implementasi. Dengan kata lain, BPMN membantu menjelaskan bagaimana proses bisnis berjalan secara nyata dan terstruktur.
 
 ### 3. Use Case Diagram
+![Use Case Diagram](Use%20Case%20Diagram.png)
 
 Use Case Diagram digunakan untuk menggambarkan interaksi antara aktor dan sistem. Diagram ini menunjukkan siapa saja pihak yang terlibat dalam penggunaan sistem dan fungsi apa saja yang dapat mereka akses.
 
@@ -57,6 +60,7 @@ Pada sistem booking ruang meeting, aktor yang biasanya terlibat adalah pengguna 
 Use Case Diagram sangat membantu dalam memahami batasan sistem dan ruang lingkup fitur yang tersedia. Diagram ini juga menjadi dasar dalam menentukan hak akses masing-masing aktor.
 
 ### 4. Class Diagram
+![Use Case Diagram](Use%20Case%20Diagram.png)
 
 Class Diagram digunakan untuk menjelaskan struktur kelas atau objek yang ada di dalam sistem. Diagram ini memperlihatkan atribut, method, dan hubungan antar kelas yang digunakan dalam proses pengembangan aplikasi.
 
@@ -65,7 +69,7 @@ Class Diagram memberikan gambaran teknis mengenai bagaimana sistem akan dibangun
 Diagram ini juga menunjukkan hubungan antar kelas, seperti asosiasi atau relasi yang mencerminkan bagaimana data saling berinteraksi di dalam aplikasi.
 
 ### 5. Sequence Diagram
-
+![Sequence Diagram](Sequence%20Diagram.png)
 Sequence Diagram digunakan untuk menjelaskan urutan interaksi antar objek atau komponen sistem dalam suatu proses tertentu. Diagram ini sangat berguna untuk memahami alur komunikasi yang terjadi ketika pengguna menjalankan sebuah fungsi di dalam sistem.
 
 Pada sistem booking ruang meeting, sequence diagram dapat menggambarkan proses ketika pengguna melakukan booking. Alurnya dimulai dari pengguna mengirim permintaan, lalu sistem menerima data, memeriksa ketersediaan ruang, melakukan validasi, dan kemudian menyimpan hasil booking apabila semua syarat terpenuhi.
