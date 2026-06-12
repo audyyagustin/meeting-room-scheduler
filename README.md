@@ -1,5 +1,8 @@
-# meeting-room-scheduler
-Documentation of Meeting Room Scheduler System Design
+# Meeting Room Scheduler
+
+## Documentation of Meeting Room Scheduler System Design
+
+---
 
 ## Deskripsi Project
 
@@ -7,109 +10,157 @@ Meeting Room Scheduler adalah sistem berbasis web yang dirancang untuk memudahka
 
 Dokumentasi pada repository ini disusun sebagai bagian dari pengembangan sistem dan ditujukan untuk menjelaskan secara rinci perancangan aplikasi sebelum implementasi penuh dilakukan. Melalui dokumentasi ini, pengguna dapat memahami bagaimana sistem bekerja, bagaimana data disusun, serta bagaimana alur booking berlangsung dari awal hingga akhir.
 
+---
+
 ## Tujuan Project
 
-Tujuan utama dari project ini adalah untuk membangun rancangan sistem booking ruang meeting yang:
-1. memudahkan pengguna dalam melakukan pemesanan ruang,
-2. membantu admin dalam mengelola data ruang dan pemesanan,
-3. mencegah terjadinya bentrokan jadwal,
-4. menghasilkan dokumentasi sistem yang jelas dan mudah dipahami.
+Tujuan utama dari project ini adalah:
+
+1. Memudahkan pengguna dalam melakukan pemesanan ruang meeting.
+2. Membantu admin dalam mengelola data ruang dan data pemesanan.
+3. Mencegah terjadinya bentrokan jadwal penggunaan ruang meeting.
+4. Menghasilkan dokumentasi sistem yang jelas dan mudah dipahami.
+5. Menjadi acuan dalam proses implementasi sistem di tahap berikutnya.
+
+---
 
 ## Isi Repository
 
-Repository ini berisi beberapa file diagram dan dokumentasi sistem, yaitu:
+Repository ini berisi beberapa diagram dan dokumentasi sistem, yaitu:
 
-- `ERD.png`
-- `BPMN.png`
-- `Use Case Diagram.png`
-- `Class Diagram.png`
-- `Sequence Diagram.png`
-- `README.md`
-
-Setiap diagram memiliki fungsi yang berbeda dalam menjelaskan rancangan sistem booking ruang meeting.
+- Activity Diagram.png
+- ERD.png
+- BPMN.png
+- Use Case Diagram.png
+- Class Diagram.png
+- Sequence Diagram.png
+- README.md
 
 ---
 
-## Deskripsi Setiap Diagram
+# Diagram Sistem
 
-### 1. ERD (Entity Relationship Diagram)
+## 1. Activity Diagram
+
+![Activity Diagram](Activity%20Diagram.png)
+
+### Penjelasan
+
+Activity Diagram digunakan untuk menggambarkan alur aktivitas yang terjadi dalam sistem Meeting Room Scheduler. Diagram ini menunjukkan urutan aktivitas mulai dari pengguna mengakses sistem, memilih ruang meeting, melakukan pemesanan, hingga sistem melakukan validasi dan menyimpan data booking.
+
+Diagram ini membantu memahami alur kerja sistem secara keseluruhan sebelum proses implementasi dilakukan.
+
+---
+
+## 2. Entity Relationship Diagram (ERD)
+
 ![ERD](ERD.png)
 
-ERD digunakan untuk menggambarkan struktur basis data yang digunakan dalam sistem booking ruang meeting. Diagram ini menunjukkan entitas utama, atribut pada masing-masing entitas, serta hubungan antar entitas.
+### Penjelasan
 
-Pada sistem ini, ERD menjelaskan bagaimana data pengguna, data ruang meeting, dan data booking saling terhubung di dalam database. Dengan adanya ERD, rancangan database menjadi lebih terarah, konsisten, dan mudah dipahami sebelum implementasi ke MySQL dilakukan.
+Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data yang digunakan dalam sistem booking ruang meeting. Diagram ini menunjukkan entitas utama, atribut masing-masing entitas, serta hubungan antar entitas yang ada di dalam sistem.
 
-ERD juga membantu memastikan bahwa setiap data yang disimpan memiliki hubungan yang logis. Contohnya, satu pengguna dapat memiliki banyak data booking, dan satu ruang meeting juga dapat digunakan dalam banyak transaksi booking. Hubungan tersebut penting agar sistem dapat berjalan dengan baik dan tidak menimbulkan redundansi data yang berlebihan.
+Melalui ERD, hubungan antara data pengguna, data ruang meeting, dan data booking dapat dipahami dengan lebih jelas sehingga proses perancangan database menjadi lebih terstruktur dan konsisten.
 
-### 2. BPMN (Business Process Model and Notation)
+---
+
+## 3. BPMN (Business Process Model and Notation)
+
 ![BPMN](BPMN.png)
 
-BPMN digunakan untuk menjelaskan alur proses bisnis sistem secara keseluruhan. Diagram ini memperlihatkan tahapan kegiatan yang dilakukan oleh pengguna maupun admin dalam proses booking ruang meeting.
+### Penjelasan
 
-Melalui BPMN, dapat dipahami bagaimana alur sistem dimulai dari pengguna melihat ketersediaan ruang, memilih jadwal, mengajukan booking, hingga sistem melakukan validasi terhadap jadwal yang dipilih. Jika data yang dimasukkan sesuai, maka sistem akan menyimpan booking. Namun jika terjadi bentrok jadwal atau data tidak valid, sistem akan memberikan penolakan atau notifikasi kesalahan.
+BPMN digunakan untuk menjelaskan proses bisnis yang terjadi dalam sistem secara menyeluruh. Diagram ini memperlihatkan tahapan aktivitas yang dilakukan oleh pengguna, sistem, dan admin selama proses pemesanan ruang meeting berlangsung.
 
-BPMN sangat penting karena menggambarkan logika operasional sistem sebelum masuk ke tahap implementasi. Dengan kata lain, BPMN membantu menjelaskan bagaimana proses bisnis berjalan secara nyata dan terstruktur.
+BPMN membantu memberikan gambaran mengenai bagaimana proses booking dilakukan mulai dari pengajuan pemesanan hingga penyimpanan data ke dalam sistem.
 
-### 3. Use Case Diagram
+---
+
+## 4. Use Case Diagram
+
 ![Use Case Diagram](Use%20Case%20Diagram.png)
 
-Use Case Diagram digunakan untuk menggambarkan interaksi antara aktor dan sistem. Diagram ini menunjukkan siapa saja pihak yang terlibat dalam penggunaan sistem dan fungsi apa saja yang dapat mereka akses.
+### Penjelasan
 
-Pada sistem booking ruang meeting, aktor yang biasanya terlibat adalah pengguna dan admin. Pengguna berperan untuk melihat ketersediaan ruang, melakukan booking, dan memantau status pemesanan. Sementara itu, admin memiliki wewenang untuk mengelola data ruang, memantau booking, dan memastikan sistem berjalan sesuai kebutuhan.
+Use Case Diagram digunakan untuk menggambarkan interaksi antara aktor dengan sistem. Diagram ini menunjukkan siapa saja pihak yang terlibat dalam penggunaan sistem serta fungsi-fungsi yang dapat diakses oleh masing-masing aktor.
 
-Use Case Diagram sangat membantu dalam memahami batasan sistem dan ruang lingkup fitur yang tersedia. Diagram ini juga menjadi dasar dalam menentukan hak akses masing-masing aktor.
+Pada sistem ini, aktor yang terlibat terdiri dari pengguna dan administrator.
 
-### 4. Class Diagram
-![Use Case Diagram](Use%20Case%20Diagram.png)
+---
 
-Class Diagram digunakan untuk menjelaskan struktur kelas atau objek yang ada di dalam sistem. Diagram ini memperlihatkan atribut, method, dan hubungan antar kelas yang digunakan dalam proses pengembangan aplikasi.
+## 5. Class Diagram
 
-Class Diagram memberikan gambaran teknis mengenai bagaimana sistem akan dibangun di tingkat kode. Misalnya, class untuk pengguna, class untuk ruang meeting, dan class untuk booking dapat dibuat sesuai dengan kebutuhan sistem. Dengan adanya class diagram, pengembangan kode menjadi lebih terarah karena struktur objek sudah direncanakan sejak awal.
+![Class Diagram](Class%20Diagram.png)
 
-Diagram ini juga menunjukkan hubungan antar kelas, seperti asosiasi atau relasi yang mencerminkan bagaimana data saling berinteraksi di dalam aplikasi.
+### Penjelasan
 
-### 5. Sequence Diagram
+Class Diagram digunakan untuk menggambarkan struktur kelas yang terdapat dalam sistem. Diagram ini menunjukkan atribut, method, serta hubungan antar kelas yang digunakan sebagai dasar pengembangan aplikasi.
+
+Dengan adanya Class Diagram, pengembang dapat memahami bagaimana objek dalam sistem saling berinteraksi dan bagaimana data dikelola dalam aplikasi.
+
+---
+
+## 6. Sequence Diagram
+
 ![Sequence Diagram](Sequence%20Diagram.png)
-Sequence Diagram digunakan untuk menjelaskan urutan interaksi antar objek atau komponen sistem dalam suatu proses tertentu. Diagram ini sangat berguna untuk memahami alur komunikasi yang terjadi ketika pengguna menjalankan sebuah fungsi di dalam sistem.
 
-Pada sistem booking ruang meeting, sequence diagram dapat menggambarkan proses ketika pengguna melakukan booking. Alurnya dimulai dari pengguna mengirim permintaan, lalu sistem menerima data, memeriksa ketersediaan ruang, melakukan validasi, dan kemudian menyimpan hasil booking apabila semua syarat terpenuhi.
+### Penjelasan
 
-Diagram ini penting karena membantu menjelaskan bagaimana proses sistem berjalan secara berurutan dan logis. Dengan sequence diagram, alur kerja sistem menjadi lebih mudah dianalisis dan dipahami.
+Sequence Diagram digunakan untuk menggambarkan urutan interaksi antar komponen sistem selama proses booking berlangsung. Diagram ini menunjukkan bagaimana pengguna mengirimkan permintaan pemesanan, bagaimana sistem melakukan validasi data, dan bagaimana data booking disimpan ke dalam database.
 
----
-
-## Deskripsi Alur Sistem
-
-Berikut adalah penjelasan umum mengenai alur kerja sistem booking ruang meeting:
-
-### 1. Pengguna membuka sistem
-Pengguna terlebih dahulu mengakses halaman utama sistem untuk melihat informasi ruang meeting yang tersedia. Pada tahap ini, sistem menampilkan data ruang dan jadwal yang dapat dipilih.
-
-### 2. Pengguna memilih ruang dan jadwal
-Setelah melihat ketersediaan ruang, pengguna menentukan ruang meeting yang ingin digunakan beserta tanggal dan jam pemakaian. Tahap ini merupakan inti dari proses booking.
-
-### 3. Sistem melakukan validasi
-Setelah data booking dikirim, sistem akan melakukan pengecekan terhadap jadwal yang dipilih. Validasi dilakukan untuk memastikan bahwa ruang belum terpakai pada waktu yang sama dan tidak terjadi bentrok dengan booking lain.
-
-### 4. Data booking disimpan
-Apabila hasil validasi menunjukkan bahwa jadwal masih tersedia, maka sistem akan menyimpan data booking ke dalam database. Booking yang berhasil biasanya diberi status tertentu agar dapat dipantau oleh admin maupun pengguna.
-
-### 5. Admin memantau data booking
-Admin memiliki peran untuk memantau seluruh aktivitas booking yang masuk. Selain itu, admin juga dapat mengelola data ruang meeting jika ada perubahan kapasitas, fasilitas, atau ketersediaan ruang.
-
-### 6. Proses dokumentasi sistem
-Seluruh alur di atas didokumentasikan melalui diagram yang telah disimpan dalam repository ini. Dokumentasi tersebut bertujuan agar pengembangan sistem dapat dipahami secara sistematis dan sesuai dengan kebutuhan akademik maupun profesional.
+Diagram ini membantu menjelaskan alur komunikasi antar komponen secara lebih rinci dan sistematis.
 
 ---
 
-## Kesimpulan
+# Deskripsi Alur Sistem
+
+Berikut merupakan gambaran umum alur kerja sistem Meeting Room Scheduler:
+
+### 1. Pengguna Mengakses Sistem
+
+Pengguna membuka sistem untuk melihat informasi ruang meeting yang tersedia beserta jadwal penggunaannya.
+
+### 2. Pengguna Memilih Ruang dan Jadwal
+
+Pengguna memilih ruang meeting yang diinginkan serta menentukan tanggal dan waktu penggunaan sesuai kebutuhan.
+
+### 3. Sistem Melakukan Validasi
+
+Sistem melakukan pemeriksaan terhadap jadwal yang dipilih untuk memastikan bahwa ruang masih tersedia dan tidak terjadi bentrokan dengan booking lain.
+
+### 4. Penyimpanan Data Booking
+
+Apabila jadwal masih tersedia, sistem akan menyimpan data booking ke dalam database dan memberikan informasi bahwa proses pemesanan berhasil dilakukan.
+
+### 5. Pengelolaan Data oleh Admin
+
+Admin bertugas memantau aktivitas booking, mengelola data ruang meeting, serta memastikan seluruh proses berjalan sesuai kebutuhan organisasi.
+
+### 6. Dokumentasi Sistem
+
+Seluruh proses yang terjadi dalam sistem didokumentasikan melalui diagram yang tersedia pada repository ini sebagai dasar implementasi dan pengembangan sistem di masa mendatang.
+
+---
+
+## Struktur File
 
 ```text
 meeting-room-scheduler/
-Berdasarkan hasil perancangan yang telah dilakukan, sistem Meeting Room Scheduler dirancang untuk membantu proses pemesanan ruang meeting secara lebih terstruktur, efisien, dan terdokumentasi dengan baik. Melalui pemanfaatan berbagai diagram perancangan seperti Entity Relationship Diagram (ERD), BPMN, Use Case Diagram, Class Diagram, dan Sequence Diagram, seluruh kebutuhan sistem dapat digambarkan secara jelas mulai dari proses bisnis, interaksi pengguna, hingga struktur data yang digunakan.
-
-ERD menunjukkan hubungan antar entitas yang mendukung proses penyimpanan data secara terintegrasi. BPMN menggambarkan alur bisnis pemesanan ruang meeting dari awal hingga akhir. Use Case Diagram menjelaskan interaksi antara aktor dengan sistem, sedangkan Class Diagram dan Sequence Diagram memberikan gambaran mengenai struktur serta alur komunikasi antar komponen sistem selama proses booking berlangsung.
-
-Dengan adanya dokumentasi ini, proses pengembangan sistem dapat dilakukan secara lebih terarah karena setiap kebutuhan dan mekanisme sistem telah dirancang terlebih dahulu. Selain itu, dokumentasi ini juga dapat digunakan sebagai referensi dalam tahap implementasi maupun pengembangan sistem di masa mendatang.
+├── README.md
+├── Activity Diagram.png
+├── BPMN.png
+├── Class Diagram.png
+├── ERD.png
+├── Sequence Diagram.png
+└── Use Case Diagram.png
+```
 
 ---
+
+# Kesimpulan
+
+Berdasarkan hasil perancangan yang telah dilakukan, sistem Meeting Room Scheduler dirancang untuk membantu proses pemesanan ruang meeting secara lebih terstruktur, efisien, dan terdokumentasi dengan baik.
+
+Melalui penggunaan Activity Diagram, ERD, BPMN, Use Case Diagram, Class Diagram, dan Sequence Diagram, seluruh kebutuhan sistem dapat digambarkan secara jelas mulai dari proses bisnis, struktur data, hingga interaksi antar komponen sistem.
+
+Dokumentasi ini diharapkan dapat menjadi acuan dalam proses implementasi maupun pengembangan sistem di masa mendatang sehingga aplikasi dapat dibangun secara lebih terarah, terstruktur, dan sesuai dengan kebutuhan pengguna.
