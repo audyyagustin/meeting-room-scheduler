@@ -102,23 +102,14 @@ Seluruh alur di atas didokumentasikan melalui diagram yang telah disimpan dalam 
 
 ---
 
-## Struktur File
+## Kesimpulan
 
 ```text
 meeting-room-scheduler/
-├── README.md
-├── ERD.png
-├── BPMN.png
-├── Use Case Diagram.png
-├── Class Diagram.png
-└── Sequence Diagram.png
-
----
-
-# Kesimpulan
-
 Berdasarkan hasil perancangan yang telah dilakukan, sistem Meeting Room Scheduler dirancang untuk membantu proses pemesanan ruang meeting secara lebih terstruktur, efisien, dan terdokumentasi dengan baik. Melalui pemanfaatan berbagai diagram perancangan seperti Entity Relationship Diagram (ERD), BPMN, Use Case Diagram, Class Diagram, dan Sequence Diagram, seluruh kebutuhan sistem dapat digambarkan secara jelas mulai dari proses bisnis, interaksi pengguna, hingga struktur data yang digunakan.
 
 ERD menunjukkan hubungan antar entitas yang mendukung proses penyimpanan data secara terintegrasi. BPMN menggambarkan alur bisnis pemesanan ruang meeting dari awal hingga akhir. Use Case Diagram menjelaskan interaksi antara aktor dengan sistem, sedangkan Class Diagram dan Sequence Diagram memberikan gambaran mengenai struktur serta alur komunikasi antar komponen sistem selama proses booking berlangsung.
 
 Dengan adanya dokumentasi ini, proses pengembangan sistem dapat dilakukan secara lebih terarah karena setiap kebutuhan dan mekanisme sistem telah dirancang terlebih dahulu. Selain itu, dokumentasi ini juga dapat digunakan sebagai referensi dalam tahap implementasi maupun pengembangan sistem di masa mendatang.
+
+---
