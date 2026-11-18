@@ -1,153 +1,152 @@
 # Meeting Room Scheduler
 
-Documentation of Meeting Room Scheduler System Design
+### System Analysis & Design Documentation
+
+An individual academic project focused on analyzing and designing a web-based meeting room booking system to support structured room scheduling, availability management, and booking administration.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Project-Individual_Project-2563EB?style=for-the-badge" alt="Individual Project"/>
+  <img src="https://img.shields.io/badge/Stage-System_Design-16A34A?style=for-the-badge" alt="System Design"/>
+  <img src="https://img.shields.io/badge/Status-Pre--Implementation-CA8A04?style=for-the-badge" alt="Pre-Implementation"/>
+</p>
 
 ---
 
-## Deskripsi Project
+## 1. Project Overview
 
-Meeting Room Scheduler merupakan rancangan sistem pemesanan ruang meeting berbasis web yang dirancang untuk membantu proses pengelolaan penggunaan ruang meeting secara lebih terstruktur, efektif, dan efisien. Sistem ini dibuat sebagai dokumentasi perancangan sistem yang menjelaskan proses bisnis, struktur basis data, serta interaksi antar komponen yang terlibat dalam proses pemesanan ruang meeting.
+Meeting Room Scheduler is a proposed web-based system designed to organize and simplify the process of booking meeting rooms within an organization or company.
 
-Dalam suatu organisasi atau perusahaan, penggunaan ruang meeting sering kali menghadapi berbagai permasalahan, seperti bentrokan jadwal, kurangnya informasi mengenai ketersediaan ruang, serta kesulitan dalam melakukan pengelolaan data pemesanan. Oleh karena itu, diperlukan suatu sistem yang mampu mengelola proses booking ruang meeting secara terpusat sehingga penggunaan ruang dapat dilakukan secara lebih optimal.
+In many organizations, meeting room management can involve several operational challenges, such as:
 
-Dokumentasi ini disusun sebagai bagian dari proses analisis dan perancangan sistem sebelum tahap implementasi dilakukan. Melalui dokumentasi ini, pengguna dapat memahami bagaimana sistem dirancang, bagaimana alur bisnis berjalan, bagaimana struktur basis data dibangun, serta bagaimana setiap komponen saling berinteraksi dalam mendukung proses booking ruang meeting.
+- Conflicting meeting schedules.
+- Limited information about room availability.
+- Difficulties managing booking records.
+- Inefficient coordination of meeting room usage.
 
----
+This project documents the analysis and system design required to address these challenges through a centralized meeting room booking process.
 
-## Tujuan Project
+**Important:** This repository contains system analysis and design documentation prepared before the implementation stage. It does not represent a fully implemented or deployed application.
 
-Tujuan utama dari perancangan sistem Meeting Room Scheduler adalah sebagai berikut:
+## 2. Project Objectives
 
-1. Memudahkan pengguna dalam melakukan pemesanan ruang meeting secara terstruktur.
-2. Membantu administrator dalam mengelola data ruang meeting dan data pemesanan.
-3. Mengurangi kemungkinan terjadinya bentrokan jadwal penggunaan ruang meeting.
-4. Menyediakan informasi ketersediaan ruang meeting secara lebih jelas dan akurat.
-5. Menghasilkan dokumentasi sistem yang dapat digunakan sebagai acuan dalam proses implementasi dan pengembangan sistem.
-6. Memberikan gambaran menyeluruh mengenai proses bisnis dan kebutuhan sistem melalui berbagai diagram perancangan.
+The project aims to:
 
----
+1. Provide a structured process for meeting room reservations.
+2. Help administrators manage meeting room and booking information.
+3. Reduce potential scheduling conflicts.
+4. Provide clearer information about meeting room availability.
+5. Document the system design as a reference for future implementation.
+6. Illustrate business processes, database structures, and system interactions through modeling diagrams.
 
-## Isi Repository
+## 3. System Scope
 
-Repository ini berisi dokumentasi dan diagram yang digunakan dalam proses perancangan sistem Meeting Room Scheduler, yaitu:
+The proposed system covers the following activities:
 
-- `Activity Diagram.png`
-- `BPMN.png`
-- `ERD.png`
-- `Use Case Diagram.png`
-- `Class Diagram.png`
-- `Sequence Diagram.png`
-- `README.md`
+| User | Administrator |
+|---|---|
+| Access the system | Manage meeting room data |
+| View room availability | Monitor booking activities |
+| Select a meeting room | Manage room information |
+| Select a booking date and time | Oversee booking records |
+| Submit a booking request | |
 
----
+### Proposed Booking Workflow
 
-## Diagram Sistem
+1. **System Access** — Users access the system to view available meeting rooms and their schedules.
+2. **Room & Schedule Selection** — Users select a meeting room, date, and time based on their requirements.
+3. **Schedule Validation** — The system checks room availability and identifies potential scheduling conflicts.
+4. **Booking Confirmation** — If the selected schedule is available, the system stores the booking information in the database and provides booking confirmation.
+5. **Administrative Management** — Administrators manage room information and monitor booking activities.
 
-### 1. Activity Diagram
+## 4. System Design & Documentation
+
+This repository contains six system modeling diagrams that describe different aspects of the proposed system.
+
+### 4.1 Activity Diagram
+
+Illustrates the sequence of activities performed by users and the system, starting from accessing the system and selecting a meeting room to submitting a booking request, validating availability, and saving booking information.
 
 ![Activity Diagram](Activity%20Diagram.png)
 
-#### Penjelasan
+### 4.2 Business Process Model and Notation (BPMN)
 
-Activity Diagram digunakan untuk menggambarkan alur aktivitas yang terjadi dalam sistem Meeting Room Scheduler. Diagram ini menunjukkan urutan kegiatan yang dilakukan oleh pengguna dan sistem mulai dari proses mengakses sistem, memilih ruang meeting, melakukan booking, hingga sistem melakukan validasi dan menyimpan data pemesanan.
+Represents the overall business workflow involving users, the system, and administrators. It illustrates the booking request process, schedule validation, and booking data management.
 
-Melalui diagram ini dapat dipahami bagaimana setiap aktivitas saling berhubungan serta bagaimana sistem merespons tindakan yang dilakukan oleh pengguna selama proses pemesanan ruang meeting berlangsung.
+![BPMN Diagram](BPMN.png)
 
----
+### 4.3 Entity Relationship Diagram (ERD)
 
-### 2. BPMN (Business Process Model and Notation)
+Describes the proposed database structure, including entities, attributes, and relationships between user information, meeting room data, and booking records.
 
-![BPMN](BPMN.png)
+![Entity Relationship Diagram](ERD.png)
 
-#### Penjelasan
+### 4.4 Use Case Diagram
 
-Business Process Model and Notation (BPMN) digunakan untuk menggambarkan proses bisnis yang terjadi dalam sistem secara menyeluruh. Diagram ini memperlihatkan alur kerja yang melibatkan pengguna, sistem, dan administrator dalam proses pengelolaan ruang meeting.
+Illustrates the interaction between system actors and the proposed system functionalities.
 
-Melalui BPMN dapat diketahui bagaimana proses dimulai dari pengguna melakukan permintaan booking, sistem melakukan validasi jadwal, hingga data pemesanan berhasil disimpan. BPMN membantu memberikan gambaran yang jelas mengenai proses operasional sistem sebelum dilakukan implementasi.
+The main actors are:
 
----
-
-### 3. Entity Relationship Diagram (ERD)
-
-![ERD](ERD.png)
-
-#### Penjelasan
-
-Entity Relationship Diagram (ERD) digunakan untuk menggambarkan struktur basis data yang digunakan pada sistem Meeting Room Scheduler. Diagram ini menunjukkan entitas yang terlibat dalam sistem beserta atribut dan hubungan antar entitas tersebut.
-
-ERD membantu dalam memahami bagaimana data pengguna, data ruang meeting, dan data booking saling berhubungan sehingga proses penyimpanan dan pengelolaan data dapat dilakukan secara terintegrasi dan konsisten.
-
----
-
-### 4. Use Case Diagram
+- **User:** Views room availability and submits meeting room booking requests.
+- **Administrator:** Manages meeting room information and monitors booking activities.
 
 ![Use Case Diagram](Use%20Case%20Diagram.png)
 
-#### Penjelasan
+### 4.5 Class Diagram
 
-Use Case Diagram digunakan untuk menggambarkan hubungan antara aktor dengan sistem. Diagram ini menunjukkan fungsi-fungsi yang dapat dijalankan oleh setiap aktor sesuai dengan hak akses yang dimiliki.
-
-Dalam sistem Meeting Room Scheduler, aktor yang terlibat terdiri dari pengguna dan administrator. Pengguna dapat melakukan aktivitas seperti melihat ketersediaan ruang dan melakukan booking, sedangkan administrator memiliki tanggung jawab untuk mengelola data ruang dan memantau aktivitas pemesanan yang terjadi.
-
----
-
-### 5. Class Diagram
+Describes the structural design of the system through classes, attributes, methods, and relationships between system components.
 
 ![Class Diagram](Class%20Diagram.png)
 
-#### Penjelasan
+### 4.6 Sequence Diagram
 
-Class Diagram digunakan untuk menjelaskan struktur kelas yang terdapat dalam sistem. Diagram ini memperlihatkan atribut, metode, serta hubungan antar kelas yang digunakan sebagai dasar dalam proses pengembangan aplikasi.
-
-Melalui Class Diagram, pengembang dapat memahami bagaimana objek dalam sistem saling berinteraksi dan bagaimana data dikelola dalam setiap komponen yang membentuk aplikasi Meeting Room Scheduler.
-
----
-
-### 6. Sequence Diagram
+Illustrates the sequence of interactions between users and system components during the booking process, including booking requests, schedule validation, and database operations.
 
 ![Sequence Diagram](Sequence%20Diagram.png)
 
-#### Penjelasan
-
-Sequence Diagram digunakan untuk menggambarkan urutan interaksi antar objek atau komponen sistem selama proses booking berlangsung. Diagram ini menunjukkan bagaimana pengguna mengirimkan permintaan pemesanan, bagaimana sistem melakukan validasi, dan bagaimana data booking disimpan ke dalam basis data.
-
-Dengan adanya Sequence Diagram, alur komunikasi antar komponen dapat dipahami secara lebih rinci sehingga memudahkan proses analisis dan implementasi sistem.
-
 ---
 
-## Deskripsi Alur Sistem
+## 5. Project Contributions
 
-Berikut merupakan gambaran umum alur kerja sistem Meeting Room Scheduler:
+**Project Type:** Individual Project
 
-### 1. Pengguna Mengakses Sistem
+This project was independently developed as an academic system analysis and design assignment.
 
-Pengguna membuka sistem untuk melihat informasi ruang meeting yang tersedia beserta jadwal penggunaannya.
+My work focused on:
 
-### 2. Pengguna Memilih Ruang dan Jadwal
+- Analyzing the business process of meeting room reservations.
+- Identifying the roles and interactions of users and administrators.
+- Modeling business workflows using BPMN.
+- Designing system models through Activity, Use Case, Class, and Sequence Diagrams.
+- Structuring database relationships using ERD.
+- Preparing and organizing system design documentation.
 
-Pengguna memilih ruang meeting yang diinginkan serta menentukan tanggal dan waktu penggunaan sesuai kebutuhan.
+## 6. Project Deliverables
 
-### 3. Sistem Melakukan Validasi
+The repository includes the following documentation:
 
-Sistem melakukan pemeriksaan terhadap jadwal yang dipilih untuk memastikan bahwa ruang masih tersedia dan tidak terjadi bentrokan dengan booking lain yang telah tersimpan sebelumnya.
+| Deliverable | Description |
+|---|---|
+| Activity Diagram | System activity workflow |
+| BPMN | Business process workflow |
+| ERD | Database structure and relationships |
+| Use Case Diagram | Actor and system interactions |
+| Class Diagram | System structure and class relationships |
+| Sequence Diagram | Sequence of system interactions |
+| README.md | Project overview and design documentation |
 
-### 4. Penyimpanan Data Booking
+## 7. Project Status
 
-Apabila jadwal yang dipilih masih tersedia, sistem akan menyimpan data booking ke dalam basis data dan memberikan informasi bahwa proses pemesanan berhasil dilakukan.
+**Current Stage: System Analysis & Design — Pre-Implementation**
 
-### 5. Pengelolaan Data oleh Administrator
+The project focuses on the analysis and design documentation stage. The diagrams provide a structured reference for understanding the proposed system and supporting potential future development.
 
-Administrator bertanggung jawab untuk memantau aktivitas booking, mengelola data ruang meeting, serta memastikan seluruh proses berjalan sesuai dengan kebutuhan organisasi.
+Application implementation and deployment are outside the scope of this repository.
 
-### 6. Dokumentasi Sistem
+## 8. Repository Structure
 
-Seluruh proses yang terjadi dalam sistem didokumentasikan melalui berbagai diagram perancangan yang tersedia pada repository ini sebagai dasar implementasi dan pengembangan sistem di masa mendatang.
-
----
-
-## Struktur File
-
-Meeting-room-scheduler/
+```text
+meeting-room-scheduler/
+│
 ├── README.md
 ├── Activity Diagram.png
 ├── BPMN.png
@@ -155,13 +154,27 @@ Meeting-room-scheduler/
 ├── ERD.png
 ├── Sequence Diagram.png
 └── Use Case Diagram.png
+```
 
 ---
 
-## Kesimpulan
+## 9. Conclusion
 
-Berdasarkan hasil analisis dan perancangan yang telah dilakukan, sistem Meeting Room Scheduler dirancang untuk membantu proses pemesanan ruang meeting secara lebih terstruktur, efisien, dan terdokumentasi dengan baik. Melalui pemanfaatan berbagai diagram perancangan seperti Activity Diagram, BPMN, ERD, Use Case Diagram, Class Diagram, dan Sequence Diagram, seluruh kebutuhan sistem dapat digambarkan secara jelas mulai dari proses bisnis, struktur basis data, hingga interaksi antar komponen sistem.
+The Meeting Room Scheduler project provides a structured design for a proposed meeting room booking system.
 
-Dokumentasi yang disusun dalam repository ini memberikan gambaran menyeluruh mengenai mekanisme kerja sistem, mulai dari proses pemilihan ruang, validasi jadwal, penyimpanan data booking, hingga proses pengelolaan data oleh administrator. Dengan adanya dokumentasi yang lengkap dan sistematis, proses implementasi aplikasi diharapkan dapat dilakukan dengan lebih terarah karena seluruh kebutuhan fungsional dan struktur sistem telah dirancang sebelumnya.
+Through business process analysis and six system modeling diagrams, the project documents the proposed booking workflow, actor responsibilities, database relationships, and interactions between system components.
 
-Selain sebagai dokumentasi akademik, rancangan sistem ini juga dapat menjadi dasar pengembangan aplikasi Meeting Room Scheduler yang lebih kompleks di masa mendatang, baik untuk kebutuhan organisasi, institusi pendidikan, maupun perusahaan yang membutuhkan pengelolaan ruang meeting secara terintegrasi.
+The resulting documentation serves as a foundation and reference for future application implementation and development.
+
+---
+
+<div align="center">
+
+**Meeting Room Scheduler**
+
+*System Analysis & Design Documentation*
+
+**Neng Audy Agustin**  
+Information Systems — Universitas Esa Unggul
+
+</div>
